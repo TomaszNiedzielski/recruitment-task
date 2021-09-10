@@ -15,4 +15,10 @@ class PostController extends Controller
     public function updateAllPosts() {
         $this->postInterface->updateAllPosts();
     }
+
+    public function index() {
+        $posts = $this->postInterface->index();
+
+        return view('posts')->with('posts', $posts);
+    }
 }
