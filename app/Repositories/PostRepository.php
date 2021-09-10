@@ -12,15 +12,12 @@ class PostRepository implements PostInterface
 
         foreach($posts as $post) {
             DB::table('posts')
-                ->updateOrInsert(
-                    ['id' => $post->id],
-                    [
-                        'user_id' => $post->userId,
-                        'title' => $post->title,
-                        'body' => $post->body,
-                        'updated_at' => date('Y-m-d H:i:s')
-                    ],
-                );
+                ->insert([
+                    'user_id' => $post->userId,
+                    'title' => $post->title,
+                    'body' => $post->body,
+                    'created_at' => date('Y-m-d H:i:s')
+                ]);
         }
     }
 

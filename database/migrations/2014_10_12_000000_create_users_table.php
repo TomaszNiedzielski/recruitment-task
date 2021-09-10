@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('username');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('address_street');
             $table->string('address_suite');
             $table->string('address_city');
@@ -29,7 +29,7 @@ class CreateUsersTable extends Migration
             $table->string('company_name');
             $table->string('company_catch_phrase');
             $table->string('company_bs');
-            $table->timestamp('updated_at');
+            $table->timestamp('created_at');
         });
     }
 

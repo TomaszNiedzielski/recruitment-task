@@ -18,7 +18,7 @@ class CreatePostsTable extends Migration
             $table->integer('user_id');
             $table->string('title');
             $table->string('body');
-            $table->timestamp('updated_at');
+            $table->timestamp('created_at');
         });
     }
 
