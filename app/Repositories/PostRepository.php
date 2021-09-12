@@ -2,13 +2,15 @@
 
 namespace App\Repositories;
 
+use Illuminate\Support\Facades\Http;
 use App\Interfaces\PostInterface;
 use DB;
 
 class PostRepository implements PostInterface
 {
-    public function updateAllPosts() {
-        $posts = json_decode(file_get_contents('https://jsonplaceholder.typicode.com/posts'));
+    public function updatePosts() {
+        $response = Http::get('https://jsonplaceholder.typicode.com/posts');
+        $posts = $response->object();
 
         foreach($posts as $post) {
             DB::table('posts')

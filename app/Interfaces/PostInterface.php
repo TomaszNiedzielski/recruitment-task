@@ -5,11 +5,11 @@ namespace App\Interfaces;
 interface PostInterface
 {
     /**
-     * Update all posts
+     * Update posts
      * 
      * @access  public
      */
-    public function updateAllPosts();
+    public function updatePosts();
 
     /**
      * Load posts

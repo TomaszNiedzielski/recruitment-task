@@ -12,7 +12,13 @@ class UserController extends Controller
         $this->userInterface = $userInterface;
     }
 
-    public function updateAllUsers() {
-        $this->userInterface->updateAllUsers();
+    public function updateUsers() {
+        $this->userInterface->updateUsers();
+    }
+
+    public function index() {
+        $mostActiveUsers = $this->userInterface->index();
+
+        return view('chart')->with('users', $mostActiveUsers);
     }
 }
