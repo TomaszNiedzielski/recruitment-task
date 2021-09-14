@@ -12,10 +12,6 @@ class PostController extends Controller
         $this->postInterface = $postInterface;
     }
 
-    public function updatePosts() {
-        $this->postInterface->updatePosts();
-    }
-
     public function index() {
         $posts = $this->postInterface->index();
 

@@ -12,10 +12,6 @@ class UserController extends Controller
         $this->userInterface = $userInterface;
     }
 
-    public function updateUsers() {
-        $this->userInterface->updateUsers();
-    }
-
     public function index() {
         $mostActiveUsers = $this->userInterface->index();
 

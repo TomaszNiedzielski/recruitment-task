@@ -24,8 +24,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->call('App\Http\Controllers\UserController@updateUsers')->daily();
-        $schedule->call('App\Http\Controllers\PostController@updatePosts')->daily();
+        $schedule->command('users:fetch')->daily();
+        $schedule->command('posts:fetch')->daily();
     }
 
     /**
