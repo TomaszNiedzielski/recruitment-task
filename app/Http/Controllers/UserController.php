@@ -13,8 +13,8 @@ class UserController extends Controller
     }
 
     public function index() {
-        $mostActiveUsers = $this->userInterface->index();
+        $response = $this->userInterface->index();
 
-        return view('chart')->with('users', $mostActiveUsers);
+        return view('chart')->with(['names' => $response->names, 'postsAmount' => $response->postsAmount]);
     }
 }

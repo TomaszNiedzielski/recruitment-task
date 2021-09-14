@@ -20,6 +20,17 @@ class UserRepository implements UserInterface
             ->take(10)
             ->get();
 
-        return $mostActiveUsers;
+        $names = [];
+        $postsAmount = [];
+
+        foreach($mostActiveUsers as $user) {
+            array_push($names, $user->name);
+            array_push($postsAmount, $user->postsAmount);
+        }
+
+        $names = json_encode($names);
+        $postsAmount = json_encode($postsAmount);
+
+        return (object) ['names' => $names, 'postsAmount' => $postsAmount];
     }
 }
